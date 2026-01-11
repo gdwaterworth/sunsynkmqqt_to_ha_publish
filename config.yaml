@@ -1,0 +1,39 @@
+name: "SolarSynkMqttToHa"
+description: "Home Assistant add-on for Generating and Publishing HA Entities
+version: "0.0.1.0alpha"
+slug: "solar_mqtt_to_ha"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+url: "https://github.com/gdwaterworth/sunsynkmqqt_to_ha_publish"
+homeassistant_api: false
+  
+  
+options:
+  sunsynk_serial: ""
+  Refresh_rate: 300
+  MQTT_Server: ""
+  MQTT_Port: 1883
+  MQTT_Login: ""
+  MQTT_Pass: ""
+
+  
+schema:
+  sunsynk_serial: str?
+  Refresh_rate: int
+  MQTT_Server: str?
+  MQTT_Port: int?
+  MQTT_Login: str?
+  MQTT_Pass: password
+
+
+
+
+
+
+
+

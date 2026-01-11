@@ -1,10 +1,22 @@
-ARG BUILD_FROM=homeassistant/amd64-base:latest
+ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV LANG C.UTF-8
+# Install requirements for add-on
+RUN apk add --no-cache python3 py3-pip py3-requests py3-cryptography py3-paho-mqtt
+WORKDIR /data
+# Copy data for add-on
+COPY run.sh /
+COPY main.py /
+COPY getapi.py /
+COPY gettoken.py /
+COPY src/ /src/
 
-WORKDIR /
-COPY start.sh /app/start.sh
-ENTRYPOINT ["/app/start.sh"]
+RUN chmod a+x /run.sh
 
-LABEL io.hass.version="VERSION" io.hass.type="addon" io.hass.arch="armhf|aarch64|i386|amd64"
+CMD [ "/run.sh" ]
+
+
+
+
+
+
