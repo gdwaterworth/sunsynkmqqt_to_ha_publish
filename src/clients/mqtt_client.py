@@ -100,8 +100,21 @@ class MqttClient:
                     else:
                         print(f"Failed to send message to `{topicsend}`")
 
+
+    # The callback for when a PUBLISH message is received from the server.
+    def on_message(client, userdata, msg):
+        print(f"Topic: {msg.topic}")
+        print(f"Message: {msg.payload.decode()}")
+        # You can add further processing logic here
+        # e.g., storing data in a database, triggering an action
+
+
     def disconnect(client):
         client.disconnect() 
 
-
+    def subscribe(client):
+        def on_message(client, userdata, msg):
+            print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+        client.subscribe(topic)
+        client.on_message = on_message
 

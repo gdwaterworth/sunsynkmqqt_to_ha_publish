@@ -7,8 +7,6 @@ WORKDIR /data
 # Copy data for add-on
 COPY run.sh /
 COPY main.py /
-COPY getapi.py /
-COPY gettoken.py /
 COPY src/ /src/
 
 RUN chmod a+x /run.sh
