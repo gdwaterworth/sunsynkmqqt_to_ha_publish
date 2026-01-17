@@ -1,0 +1,23 @@
+{
+    "/load/totalPower" : {
+        "HAlocation":"/",
+        "type": "sensor",
+        "state_class": "measurement",
+        "device_class": "power",
+        "unit_of_measurement": "W"
+        },
+    "/load/vip/0/volt" : {
+        "HAlocation":"/",
+        "type": "sensor",
+        "state_class": "measurement",
+        "device_class": "power",
+        "unit_of_measurement": "W"
+        },
+    "/load/vip/0/current" : {
+        "HAlocation":"/",
+        "type": "sensor",
+        "state_class": "measurement",
+        "device_class": "power",
+        "unit_of_measurement": "W"
+        }
+}

@@ -15,6 +15,7 @@ homeassistant_api: false
   
 options:
   sunsynk_serial: ""
+  ModelFile:"Sunsynk_1phase.json"
   Refresh_rate: 300
   MQTT_Server: ""
   MQTT_Port: 1883
@@ -24,6 +25,7 @@ options:
   
 schema:
   sunsynk_serial: str?
+  ModelFile: list(Sunsynk_1phase.json, Sunsynk_3phase.json)
   Refresh_rate: int
   MQTT_Server: str?
   MQTT_Port: int?
